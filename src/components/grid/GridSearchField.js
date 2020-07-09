@@ -1,6 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import {Field, Input} from "../../form";
+import {Field, Input} from "../index";
 
 class GridSearchField extends React.Component {
 

@@ -7,7 +7,7 @@ import {
 
 import DialogBody from "./DialogBody";
 import DialogFooter from "./DialogFooter";
-import {I18Massage} from "../components/common";
+import {I18Massage} from "../common";
 
 function Dialog({children, className, isOpen, size, title,toggle, ...restProps}) {
     let childrenArray = React.Children.toArray(children);

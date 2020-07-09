@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {concatStrings} from '../../util/StringUtils'
+import {concatStrings} from '../util/StringUtils'
 
 const Icon = ({code, size, color, perFix,onClick}) => {
 

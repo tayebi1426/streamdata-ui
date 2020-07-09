@@ -1,6 +1,6 @@
 import React from 'react'
 import {Card, Col, Row} from '../../components'
-import ImageGallery from '../../components/components/common/ImageGallery'
+import ImageGallery from '../../components/common/ImageGallery'
 
 
 const images = [

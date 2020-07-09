@@ -1,10 +1,7 @@
 import React from 'react'
 
-import Button from "../../form/Button";
-import Row from "../../bootstrap/Row";
-
+import {Form,Row,Button} from "../index";
 import {GridContext} from './GridContext';
-import Form from "../../form/Form";
 import {createGridSearchObject} from "./createGridSearchObject";
 
 class GridSearchForm extends React.Component {

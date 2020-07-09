@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {CustomInput} from "reactstrap";
-import {I18Massage} from "../components/common";
+import {I18Massage} from "../common";
 
 function Radio(props) {
     const {label, ...restProps} = props;

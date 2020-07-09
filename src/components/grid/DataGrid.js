@@ -1,7 +1,7 @@
 import React from "react";
 import {Grid as KGrid, GridColumn as KGridColumn} from '@progress/kendo-react-grid'
-import {XhrRequest} from '../../util/index'
-import {withTranslation} from '../../i18n/index'
+import {XhrRequest,withTranslation} from '../index'
+
 import GridColumn from './GridColumn'
 import GridCommands from './GridCommands'
 import GridCommand from './GridCommand'
@@ -64,7 +64,7 @@ class DataGrid extends React.Component {
         const {readUrl, localData, skip, pageSize} = this.props;
         //this.fetchGridData(readUrl, localData, skip, pageSize);
     }
-
+/*
     componentWillReceiveProps(newProps) {
 
         // if (newProps.readUrl !== this.state.readUrl) {
@@ -72,7 +72,7 @@ class DataGrid extends React.Component {
         const {readUrl, localData, skip, pageSize} = newProps;
         this.fetchGridData(readUrl, localData, skip, pageSize);
         // }
-    }
+    }*/
 
     render() {
         let gridColumns = this.regenerateGridColumns();
@@ -143,7 +143,7 @@ class DataGrid extends React.Component {
         return React.createElement(KGridColumn,
             {
                 key: idx,
-                title: t(title),
+                title: (title),
                 cell: render,
                 className: 'grid-column',
                 // width: '100',
@@ -157,7 +157,7 @@ class DataGrid extends React.Component {
             {
                 key: -1,
                 className: 'scrolling-command',
-                title: t('gridCommandsTitle'),
+                title: ('gridCommandsTitle'),
                 cell: this.createCustomCommandCell.bind(this, gridCommands)
             });
     }
@@ -273,4 +273,4 @@ DataGrid.defaultProps = {
     selectionMode: false,
 };
 
-export default withTranslation(DataGrid);
+export default (DataGrid);

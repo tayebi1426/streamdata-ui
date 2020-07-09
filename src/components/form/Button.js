@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import {Button as BsButton} from 'reactstrap';
-import {I18Massage} from '../components/common'
-import Icon from "../components/common/Icon";
+import {I18Massage} from '../common'
+import Icon from "../common/Icon";
 
 const Button = ({isPrimary, link, title, visible, icon, iconSize, color,className, ...restProps}) => {
 

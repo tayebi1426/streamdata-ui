@@ -3,12 +3,10 @@ import DefaultLayout from "../pages/layouts/DefaultLayout";
 
 let LoginPage = React.lazy(() => import("../pages/Login"));
 let AccountList = React.lazy(() => import("../pages/AccountList"));
-let TransactionList = React.lazy(() => import("../pages/TransactionList"));
 
 
 const MAIN_ROUTES = [
-    {path: '/account', component: AccountList,authorities:['USER']},
-    {path: '/transaction', component: TransactionList,authorities:['USER']},
+    {path: '/account', component: AccountList,authorities:['USER']}
 ];
 const APP_ROUTES = [
     {path: '/login', component: LoginPage},

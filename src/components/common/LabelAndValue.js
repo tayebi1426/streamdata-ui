@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import {Col} from '../../bootstrap';
-import I18Massage from "./I18Massage";
+import {Col} from '../bootstrap';
+import I18Massage from "../i18n/I18Massage";
 
 function LabelAndValue({label, value, format}) {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Label as BsLabel} from "reactstrap";
-import I18Massage from "../components/common/I18Massage";
+import I18Massage from "../i18n/I18Massage";
 
 function Label({children, code, ...restProps}) {
     if (!code) {

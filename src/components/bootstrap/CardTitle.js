@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Row from "./Row";
 import Col from "./Col";
 import Button from "../form/Button";
-import I18Massage from "../components/common/I18Massage";
+import I18Massage from "../i18n/I18Massage";
 
 const CardTitle = (props) => {
     const {className, title, collapse, isOpen, openIcon, closeIcon, toggleCollapse} = props;

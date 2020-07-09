@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Card, EditCommand, GridCommand, GridCommands, GridToolbar, withTranslation} from "../components";
-import {DataGrid, GridColumn} from "../components/components/datagrid";
+import {DataGrid, GridColumn} from "../components";
 
 class AccountList extends React.Component {
 

@@ -1,6 +1,6 @@
 import React from "react";
 import {Card, CardHeader, CardTitle, Col, Collapse} from "reactstrap";
-import Icon from "./Icon";
+import Icon from "../common/Icon";
 import * as PropTypes from 'prop-types';
 
 export default class Accordion extends React.Component {

@@ -6,7 +6,7 @@ function GridIndexColumn({t}) {
         {
             cell: IndexCell,
             width: '40',
-            headerCell: () => <span>{t('gridIndex')}</span>,
+            headerCell: () => <span>{('gridIndex')}</span>,
             key: 'indexGrid',
             className: 'grid-index',
             field: 'index',

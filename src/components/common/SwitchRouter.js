@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Switch} from 'react-router-dom';
-import SecureRoute from "../../security/SecureRoute";
+import SecureRoute from "../security/SecureRoute";
 
 function SwitchRouter({routes, children}) {
     return <Switch>
