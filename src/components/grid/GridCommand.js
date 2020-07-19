@@ -12,7 +12,7 @@ class GridCommand extends React.Component {
             dataItem
         } = this.props;
 
-        return <span title={t(title)} onClick={onClick.bind(null, {dataItem, dataIndex})}>
+        return <span className='data-grid-command' title={t(title)} onClick={onClick && onClick.bind(this,dataItem,dataIndex)}>
             <Icon code={icon} size={iconSize} mask={['far', 'circle']}/>
         </span>
     }
@@ -23,11 +23,14 @@ GridCommand.propTypes = {
     iconSize: PropTypes.string.isRequired,
     iconColor: PropTypes.string,
     title: PropTypes.string.isRequired,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    dataIndex: PropTypes.number,
+    dataItem: PropTypes.object,
+    t: PropTypes.func
 };
 
 GridCommand.defaultProps = {
-    iconSize: "2x"
+    iconSize: "lg"
 };
 
 

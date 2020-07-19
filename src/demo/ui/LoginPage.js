@@ -41,7 +41,7 @@ const LoginForm = ({onLoginSuccess}) => {
         <Row>
             <Col className='invalidLoginMessage'>
                 {invalidLogin &&
-                <I18Massage code='err.invalid-username-or-password'/>}
+                <I18Massage code='err.invalid_usernameOrPassword'/>}
             </Col>
         </Row>
         <Form initialValues={{username: '', password: ''}}

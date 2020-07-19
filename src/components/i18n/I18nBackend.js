@@ -24,7 +24,7 @@ class I18nBackend {
 
         let url = this.services.interpolator.interpolate(loadPath, {lng: language, ns: namespace}, language, {});
 
-        XhrRequest.getRequest(url).then((resource) => callback(null, resource));
+        XhrRequest.get(url).then((resource) => callback(null, resource));
     }
 }
 

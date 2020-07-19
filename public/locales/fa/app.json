@@ -1,63 +1,28 @@
 {
+  "add": "افزودن",
   "edit": "ویرایش",
-  "commands": "-",
-  "sampleForm": "فرم نمونه",
   "save": "ذخیره",
-  "firstName": "نام",
-  "lastName":"نام خانوادگی",
-  "nationalCode":"کد ملی",
   "password": "رمز عبور",
   "email": "ایمیل",
   "gridIndex": "ردیف",
-  "gridCommandsTitle": "عملیات",
   "search": "جستجو",
   "clear": "پاک کردن",
-  "product": {
-    "id": "شناسه محصول",
-    "name": "نام محصول",
-    "code": "کد",
-    "UnitsInStock":"تعداد موجود در انبار"
-  },
-  "name":"نام",
-  "age":"سن",
-  "send":"ارسال",
-  "description":"توضیحات",
-  "birthDate":"تاریخ تولد",
-  "cancel" :"انصراف",
-  "favColor":"رنگ مورد علاقه",
-  "policyInfo":{
-    "title":"مشخصات بیمه نامه",
-    "policyNumber":"شماره بیمه نامه",
-    "contract": {
-      "contractNumber":"شماره قرارداد",
-      "startDate": "تاریخ شروع قرارداد",
-      "endDate": "تاریخ پایان قرارداد",
-      "policyholder":"بیمه گذار"
-    },
-    "insured":{
-      "firstName":"نام",
-      "lastName":"نام خانوادگی",
-      "nationalCode":"کد ملی",
-      "fatherName":"نام پدر",
-      "identityCardNo":"شماره شناسنامه",
-      "age":"سن"
-    }
-  },
+  "cancel": "انصراف",
+  "commands": "عملیات",
+  "personList": "لیست اشخاص",
   "loginPage": {
     "username": "نام کاربری",
-    "password":"رمز عبور",
-    "forgotPassword":"رمز عبور خود را فراموش کرده اید؟",
-    "register":"ثبت نام",
-    "login":"ورود"
+    "password": "کلمه عبور",
+    "forgotPassword": "رمز عبور را فراموش کرده اید؟",
+    "login": "ورود"
   },
-  "acc": {
-    "accountList": "لیست حسابها",
-    "accountName": "نام حساب",
-    "accountBalance": "موجودی حساب",
-    "accountCreationDate":"تاریخ افتتاح حساب"
-  },
-  "state":"وضعیت بیمه نامه",
-  "err":{
-    "invalid-username-or-password":"نام کاربری یا رمز عبور اشتباه است!"
+  "person": {
+    "firstName": "نام",
+    "lastName": "نام خانوادگی",
+    "nationalCode": "کد ملی",
+    "birthDate": "تاریخ تولد",
+    "marriedState": "متاهل",
+    "gender": "جنسیت",
+    "description": "توضیحات"
   }
 }

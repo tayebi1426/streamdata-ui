@@ -5,10 +5,12 @@ import {SwitchRouter} from './components'
 import configStore from './redux'
 import appRoutes from './routing'
 
-import './assets/css/vendor/bootstrap.min.css';
+//import './assets/css/vendor/bootstrap.min.css';
+import './assets/css/vendor/bootstrap-rtl.css';
 import './assets/webfonts/fontawesome.css';
 import './assets/css/notification/notifications.css';
 import './assets/css/vendor/kendo-all.css';
+import './assets/css/sass/custom-kendo.scss';
 import './assets/fonts/iransans/iransans-font.css';
 import './assets/css/sass/themes/gogo.light.purple.scss';
 

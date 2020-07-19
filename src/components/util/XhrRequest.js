@@ -2,8 +2,7 @@ import axios from 'axios'
 import Security from "../security/Security";
 
 const POST_METHOD = 'POST';
-const PUT_METHOD = 'PUT';
-const DELETE_METHOD = 'DELETE';
+
 const METHOD_CONFIG_NAME = 'method';
 const DEFAULT_POST_HEADER = {'Content-Type': 'application/json; charset=utf-8'};
 
@@ -15,22 +14,12 @@ axios.defaults.timeout = DEFAULT_REQUEST_TIMEOUT || 10000;
 
 class XhrRequest {
 
-    static getRequest(url, params, headers) {
+    static get(url, params, headers) {
         return XhrRequest.callRequest(XhrRequest.createRequest({url, params, headers}))
     }
 
-    static postRequest(url, data, headers) {
+    static post(url, data, headers) {
         let req = XhrRequest.createRequest({url, [METHOD_CONFIG_NAME]: POST_METHOD, data, headers});
-        return XhrRequest.callRequest(req);
-    }
-
-    static putRequest(url, data, headers) {
-        let req = XhrRequest.createRequest({url, [METHOD_CONFIG_NAME]: PUT_METHOD, data, headers});
-        return XhrRequest.callRequest(req);
-    }
-
-    static deleteRequest(url, data, headers) {
-        let req = XhrRequest.createRequest({url, [METHOD_CONFIG_NAME]: DELETE_METHOD, data, headers});
         return XhrRequest.callRequest(req);
     }
 

@@ -5,8 +5,8 @@ import {Col, Row,SwitchRouter} from '../../components';
 
 class DefaultLayout extends Component {
     state = {
-        menuState: 2,
-        menuClassName: 'menu-hidden'
+        menuState: 0,
+        menuClassName: 'sub-hidden'
     };
 
     toggleMenuState = () => {

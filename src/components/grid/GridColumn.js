@@ -3,8 +3,9 @@ import {GridColumn as KGridColumn} from '@progress/kendo-react-grid';
 import * as PropTypes from 'prop-types';
 
 
-function GridColumn(props) {
-    return <KGridColumn  {...props}/>
+function GridColumn({title,...restProps}) {
+    console.log('title : ',title);
+    return <div>defs</div> //<KGridColumn title={title + ' ---- '}  {...restProps}/>
 }
 
 GridColumn.defaultProps = {

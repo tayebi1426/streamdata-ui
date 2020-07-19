@@ -37,7 +37,8 @@ class Field extends React.Component {
         if (children) {
             const child = React.Children.only(children);
             const {onChange, ...childRestProps} = child.props;
-            fieldContent = React.cloneElement(child, {
+            fieldContent = React.cloneElement(child,
+                {
                 onChange: e => this.handelChange(e, onChange),
                 ...commonAttributes,
                 ...childRestProps

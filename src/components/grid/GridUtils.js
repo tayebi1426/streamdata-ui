@@ -1,4 +1,4 @@
-import {gregorianToJalali, gregorianToJalaliWithTime} from '../util/gregorainToJalali';
+import gregorianToJalali,{DATE_TIME_FORMAT}  from '../util/gregorianToJalali';
 import {digitGrouping} from '../util/CommonUtils'
 import React from "react";
 
@@ -10,7 +10,7 @@ const createFormatter = (format, value) => {
             );
         case "dateTime":
             return (
-                <td dir={'ltr'}>{gregorianToJalaliWithTime(value)}</td>
+                <td dir={'ltr'}>{gregorianToJalali(value)}</td>
             );
         case "currency":
             return (

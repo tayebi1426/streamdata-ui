@@ -1,13 +1,29 @@
 import React from "react";
-import RcSwitch from "rc-switch";
-import "rc-switch/assets/index.css";
+import PropTypes from "prop-types";
+
+import { Input} from "./index";
 
 class  Switch extends React.Component{
+
+    onChange=({checked,event})=>{
+      console.log('Switch.onChange : ',checked);
+    };
     render() {
-        return <RcSwitch {... this.props}/>
+        return   <div className="custom-control custom-checkbox">
+            <Input type='checkbox' className={'custom-control-input'}/>
+        </div>
     }
 }
-Switch.propTypes = {};
+Switch.propTypes = {
+    "checked":PropTypes.bool,
+    "defaultChecked":PropTypes.bool,
+    "disabled":PropTypes.bool,
+    "onClick":PropTypes.func,
+    "onChange":PropTypes.func,
+    "className":PropTypes.string,
+    "checkedChildren":PropTypes.string,
+    "unCheckedChildren":PropTypes.string
+};
 Switch.defaultProps = {
     className: "custom-switch custom-switch-primary"
 };

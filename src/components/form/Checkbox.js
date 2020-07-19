@@ -3,8 +3,8 @@ import {CustomInput} from 'reactstrap'
 import PropTypes from 'prop-types';
 import {withTranslation} from '../i18n';
 
-function Checkbox({label,t,...restProps}) {
-    return <CustomInput label={t(label)} {...restProps}/>
+function Checkbox({label,t,value,...restProps}) {
+    return <CustomInput label={t(label)} value={value} {...restProps} checked={value}/>
 }
 
 Checkbox.propTypes = {

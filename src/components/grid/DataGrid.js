@@ -1,6 +1,6 @@
 import React from "react";
 import {Grid as KGrid, GridColumn as KGridColumn} from '@progress/kendo-react-grid'
-import {XhrRequest,withTranslation} from '../index'
+import {XhrRequest} from '../index'
 
 import GridColumn from './GridColumn'
 import GridCommands from './GridCommands'
@@ -15,6 +15,7 @@ import {createFormatter} from './GridUtils'
 import {IntlProvider, loadMessages, LocalizationProvider} from '@progress/kendo-react-intl';
 import persianGridMessages from './i18n/fa';
 import DropDownCommand from "./DropDownCommand";
+import {withTranslation } from 'react-i18next';
 
 const language = "fa";
 loadMessages(persianGridMessages, language);
@@ -39,7 +40,7 @@ class DataGrid extends React.Component {
 
     dataStateChange = (e) => {
         console.log({e});
-        //this.fetchGridData(this.state.readUrl, this.props.localData, e.data.skip, e.data.take);
+        this.fetchGridData(this.state.readUrl, this.props.localData, e.data.skip, e.data.take);
     };
 
 
@@ -52,7 +53,7 @@ class DataGrid extends React.Component {
         if (localData) {
             this.fillGridData(request, localData.slice(skip, pageSize + skip), localData.length);
         } else if (readUrl) {
-            XhrRequest.postRequest(readUrl, request).then(response => {
+            XhrRequest.post(readUrl, request).then(response => {
                 this.fillGridData(request, response.data, response.total);
             });
         } else {
@@ -62,7 +63,7 @@ class DataGrid extends React.Component {
 
     componentDidMount() {
         const {readUrl, localData, skip, pageSize} = this.props;
-        //this.fetchGridData(readUrl, localData, skip, pageSize);
+        this.fetchGridData(readUrl, localData, skip, pageSize);
     }
 /*
     componentWillReceiveProps(newProps) {
@@ -143,7 +144,7 @@ class DataGrid extends React.Component {
         return React.createElement(KGridColumn,
             {
                 key: idx,
-                title: (title),
+                title: t(title),
                 cell: render,
                 className: 'grid-column',
                 // width: '100',
@@ -152,12 +153,13 @@ class DataGrid extends React.Component {
     }
 
     createCommandColumn(gridCommands) {
-        let {t} = this.props;
+
+        let {t} =this.props;
         return React.createElement(KGridColumn,
             {
                 key: -1,
                 className: 'scrolling-command',
-                title: ('gridCommandsTitle'),
+                title: t('commands'),
                 cell: this.createCustomCommandCell.bind(this, gridCommands)
             });
     }
@@ -273,4 +275,4 @@ DataGrid.defaultProps = {
     selectionMode: false,
 };
 
-export default (DataGrid);
+export default withTranslation()(DataGrid);

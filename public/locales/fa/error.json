@@ -1,3 +1,5 @@
 {
-
+  "err.invalid_usernameOrPassword": "نام کاربری یا کلمه عبور اشتباه است",
+  "err.network_connection": "خطا در ارتباط با سرور",
+  "err.unhandled_error": "خطا سیستمی رخ داده است"
 }

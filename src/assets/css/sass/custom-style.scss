@@ -2,7 +2,7 @@ $card-border-radius: 0.75rem;
 $padding-5-7: 0.5rem 0.75rem;
 
 body {
-  font-family: BYekan, IRANSans, sans-serif !important;
+  font-family: IRANSans, sans-serif !important;
   font-weight: normal !important;
 }
 
@@ -114,6 +114,7 @@ body {
 }
 
 div.card {
+ box-shadow:  10px 12px 15px 2px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
   .card-body {
     padding: $padding-5-7;
   }
@@ -210,27 +211,6 @@ fieldset > legend {
   margin-bottom: 0.75rem;
 }
 
-.login-form {
-  margin: 10rem auto auto;
-
-  .login-icon {
-    text-align: center;
-    padding: 0.5rem 0;
-    color: #00b894;
-  }
-
-  .registerUser,
-  .forgotPassword {
-    margin: auto;
-  }
-
-  .invalidLoginMessage {
-    text-align: center;
-    min-height: 2rem;
-    color: crimson;
-    font-weight: bold;
-  }
-}
 
 .scrolling-wrapper {
   //width: 30em;
@@ -260,4 +240,11 @@ fieldset > legend {
   i::before {
     content: "\f054" !important;
   }
+}
+
+.data-grid-command{
+  margin: 0 5px;
+}
+.data-grid-toolbar{
+  margin: 10px;
 }

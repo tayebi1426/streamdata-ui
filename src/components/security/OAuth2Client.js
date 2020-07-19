@@ -15,7 +15,7 @@ class OAuth2Client {
         return {'Content-Type': FORM_URLENCODED, 'Authorization': basicAuth};
     }
     static takeToken(username,password){
-       return XhrRequest.postRequest(OAUTH_SRV_TOKEN_URL,
+       return XhrRequest.post(OAUTH_SRV_TOKEN_URL,
             querystring.encode({
                 'grant_type': GRANT_TYPE,
                 username,

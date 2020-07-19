@@ -13,7 +13,7 @@ function GridToolbar(props) {
                 });
 
                 return (
-                    <div className={"gridToolbar"}>
+                    <div className={"data-grid-toolbar"}>
                         {children}
                     </div>
                 )
