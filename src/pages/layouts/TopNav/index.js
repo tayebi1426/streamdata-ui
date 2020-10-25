@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import MenuButton from './MenuButton'
-//import NavBarSearch from './NavBarSearch'
+import NavBarSearch from './NavBarSearch'
 import NavBarLogo from './NavBarLogo'
 import UserProfile from './UserProfile'
 import {NotificationContainer} from 'react-notifications';

@@ -19,10 +19,27 @@
   "person": {
     "firstName": "نام",
     "lastName": "نام خانوادگی",
+    "fatherName": "نام پدر",
     "nationalCode": "کد ملی",
     "birthDate": "تاریخ تولد",
     "marriedState": "متاهل",
     "gender": "جنسیت",
     "description": "توضیحات"
+  },
+  "address": {
+    "province": "استان",
+    "city": "شهر",
+    "fullAddress": "آدرس",
+    "postalCode": "کد پستی"
+  },
+  "contact": {
+    "email": "ایمیل",
+    "mobile": "شماره تلفن",
+    "tel": "تلفن"
+  },
+  "error": {
+    "invalid_grant": "نام کاربری یا کلمه عبور اشتباه است",
+    "network_connection": "خطا در ارتباط با سرور",
+    "unhandled_error": "خطا سیستمی رخ داده است"
   }
 }

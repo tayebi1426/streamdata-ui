@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import HelpDeskApp from "./App";
+import StreamDataApp from "./App";
 
-ReactDOM.render(<HelpDeskApp/>, document.getElementById('root'));
-
+ReactDOM.render(<StreamDataApp/>, document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change

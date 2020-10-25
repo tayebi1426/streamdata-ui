@@ -9,4 +9,4 @@ I18Massage.propTypes = {
     code: PropTypes.string.isRequired
 };
 
-export default withTranslation(I18Massage);
+export default withTranslation(I18Massage,['error','app']);

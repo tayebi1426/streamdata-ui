@@ -1,10 +1,10 @@
-import AuthTokenStorage from "./AuthTokenStorage";
-import OAuth2Client from "./OAuth2Client";
+import AuthTokenStorage from "../components/security/AuthTokenStorage";
+import OAuth2Client from "../components/security/OAuth2Client";
 
-class Security {
+class SecurityService {
 
     static isAuthenticated() {
-        return Security.getUserAccount() !== null;
+        return SecurityService.getUserAccount() !== null;
     }
 
     static getUserAccount() {
@@ -22,15 +22,23 @@ class Security {
     }
 
     static getUserAuthorities() {
-        return Security.getUserAccount()['authorities'];
+        return SecurityService.getUserAccount()['authorities'];
     }
 
-    static loginUser(username, password) {
+    static login(username, password) {
         AuthTokenStorage.removeToken();
         return OAuth2Client.takeToken(username, password).then((token) => {
             AuthTokenStorage.persistToken(token)
         }).catch((error) => {
-            return Promise.reject(error);
+            let errorMessage;
+            if (!error.response) {
+                errorMessage= 'error.network_connection';
+            } else if (error.response.status === 400) {
+                errorMessage= 'error.invalid_grant';
+            }else{
+                errorMessage='error.unhandled_error';
+            }
+             return Promise.reject(errorMessage);
         });
     }
 
@@ -39,7 +47,7 @@ class Security {
     }
 
     static hasAuthority(authorities) {
-        let userAuthorities = Security.getUserAuthorities();
+        let userAuthorities = SecurityService.getUserAuthorities();
         if (!userAuthorities || !authorities) {
             return false;
         }
@@ -51,4 +59,4 @@ class Security {
     }
 }
 
-export default Security;
+export default SecurityService;

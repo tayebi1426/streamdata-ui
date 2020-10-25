@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import Security from './Security.js'
+import SecurityService from '../../service/SecurityService.js'
 
 const Authorization = ({access, children}) => {
-    return Security.hasAuthority(access) ? children : null;
+    return SecurityService.hasAuthority(access) ? children : null;
 };
 
 Authorization.propTypes = {

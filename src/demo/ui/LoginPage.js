@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Card, Col, Field, Form, I18Massage, Icon, Input, Link, Row, Security} from "../../components";
+import {Button, Card, Col, Field, Form, I18Massage, Icon, Input, Link, Row, SecurityService} from "../../components";
 
 const LoginPage = ({history}) => {
     const onLoginSuccess = (token) => {
@@ -29,7 +29,7 @@ const LoginForm = ({onLoginSuccess}) => {
     const [invalidLogin, setInvalidLogin] = useState(false);
     const onLogin = (values) => {
         setInvalidLogin(false);
-        Security.loginUser(values.username, values.password)
+        SecurityService.loginUser(values.username, values.password)
             .then((token) => {
                 onLoginSuccess(token);
             }).catch((err) => {

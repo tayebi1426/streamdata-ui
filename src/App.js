@@ -4,16 +4,20 @@ import {Provider} from "react-redux";
 import {SwitchRouter} from './components'
 import configStore from './redux'
 import appRoutes from './routing'
+import axios from 'axios'
+import Security from "./service/SecurityService";
+import './assets'
 
-//import './assets/css/vendor/bootstrap.min.css';
-import './assets/css/vendor/bootstrap-rtl.css';
-import './assets/webfonts/fontawesome.css';
-import './assets/css/notification/notifications.css';
-import './assets/css/vendor/kendo-all.css';
-import './assets/css/sass/custom-kendo.scss';
-import './assets/fonts/iransans/iransans-font.css';
-import './assets/css/sass/themes/gogo.light.purple.scss';
-
+axios.interceptors.request.use((config) => {
+    console.log('axios pre send request',config);
+    const userAccount =  Security.getUserAccount();
+    if ( userAccount && userAccount['access_token'] != null ) {
+        config.headers.Authorization = `Bearer ${userAccount['access_token']}`;
+    }
+    return config;
+}, (error) => {
+    return Promise.reject(error);
+});
 
 const appStore = configStore();
 

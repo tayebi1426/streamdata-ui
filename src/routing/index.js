@@ -1,7 +1,7 @@
 import React from 'react'
 import DefaultLayout from "../pages/layouts/DefaultLayout";
 
-let LoginPage = React.lazy(() => import("../pages/Login"));
+let LoginPage = React.lazy(() => import("../pages/LoginPage"));
 let PersonList = React.lazy(() => import("../pages/PersonList"));
 let AddPerson = React.lazy(() => import("../pages/AddPerson"));
 

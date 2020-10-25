@@ -1,9 +1,9 @@
 export * from './grid';
-export * from './tab/index';
-export {Card, CardBody, CardTitle, Row, Col} from "./bootstrap/index";
-export * from './common/index';
+export * from './tab';
+export {Card, CardBody, CardTitle, Row, Col} from "./bootstrap";
+export * from './common';
 export * from './form';
-export * from './util/index';
-export {withTranslation} from './i18n/index';
-export * from './security/index';
-export * from './validation/index';
+export * from './util';
+export {withTranslation} from './i18n';
+export * from './security';
+export * from './validation';

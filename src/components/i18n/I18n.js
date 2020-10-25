@@ -10,7 +10,7 @@ let options = {
     ns: ['app','error'],
     defaultNS: 'app',
     fallbackNS: false,
-    debug: false
+    debug: true
 };
 
 I18n.use(initReactI18next)

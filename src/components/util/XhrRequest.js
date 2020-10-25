@@ -1,5 +1,4 @@
 import axios from 'axios'
-import Security from "../security/Security";
 
 const POST_METHOD = 'POST';
 
@@ -38,27 +37,35 @@ class XhrRequest {
     static updateDefaultHeader(header) {
         axios.defaults.headers = Object.assign({}, axios.defaults.headers, header)
     }
+
+    static registerRequestInterceptors(onFulfilled, onRejected) {
+        if (!onFulfilled) {
+            onFulfilled = (config) => {
+                return config;
+            }
+        }
+        if (!onRejected) {
+            onRejected = (error) => {
+                return Promise.reject(error);
+            }
+        }
+        axios.interceptors.request.use(onFulfilled, onRejected);
+    }
+
+    static registerResponseInterceptors(onFulfilled, onRejected) {
+        if (!onFulfilled) {
+            onFulfilled = (config) => {
+                return config;
+            }
+        }
+        if (!onRejected) {
+            onRejected = (error) => {
+                return Promise.reject(error);
+            }
+        }
+        axios.interceptors.response.use(onFulfilled, onRejected);
+    }
 }
 
-axios.interceptors.request.use((config) => {
-    // Do something before request is sent
-    const userAccount =  Security.getUserAccount();
-    if ( userAccount && userAccount['access_token'] != null ) {
-        config.headers.Authorization = `Bearer ${userAccount['access_token']}`;
-    }
-    return config;
-}, (error) => {
-    // Do something with request error
-    console.error('request error : ', error);
-    return Promise.reject(error);
-});
-
-axios.interceptors.response.use((response) => {
-    // Do something with response data
-    return response;
-}, (error) => {
-    console.error('response error : ', error);
-    return Promise.reject(error);
-});
 
 export default XhrRequest;

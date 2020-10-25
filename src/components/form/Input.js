@@ -3,7 +3,6 @@ import {Input as BsInput} from 'reactstrap'
 import PropTypes from 'prop-types';
 
 function Input(props) {
-    console.log('read ', {props})
     return <BsInput  {...props}/>
 }
 
