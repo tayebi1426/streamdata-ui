@@ -16,6 +16,13 @@
     "forgotPassword": "رمز عبور را فراموش کرده اید؟",
     "login": "ورود"
   },
+  "employee": {
+    "employee_info": "اطلاعات کارمند",
+    "personal_info": "اطلاعات شخصی",
+    "contact_info": "اطلاعات تماس",
+    "address_info": "آدرس",
+    "skill_info": "مهارتها"
+  },
   "person": {
     "firstName": "نام",
     "lastName": "نام خانوادگی",
@@ -34,8 +41,8 @@
   },
   "contact": {
     "email": "ایمیل",
-    "mobile": "شماره تلفن",
-    "tel": "تلفن"
+    "mobile": "شماره موبایل",
+    "tel": "تلفن ثابت"
   },
   "error": {
     "invalid_grant": "نام کاربری یا کلمه عبور اشتباه است",

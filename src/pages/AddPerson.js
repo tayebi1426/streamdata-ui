@@ -21,12 +21,18 @@ class AddPerson extends React.Component {
         birthDate: new Date(),
         gender: null,
         marriedState: true,
-        address:{
-            province:null,
-            city:null,
-            postalCode:NaN,
-            fullAddress:''
-        }
+        contact: {
+            mobileNumber: '',
+            tel: '',
+            email: ''
+        },
+        address: {
+            province: null,
+            city: null,
+            postalCode: NaN,
+            fullAddress: ''
+        },
+        skills: []
     };
 
     state = {
@@ -50,24 +56,29 @@ class AddPerson extends React.Component {
             <Form initialValues={this.initPersonData}
                   validationRules={ADD_ACCOUNT_RULES}
                   onSubmit={this.onSave}>
-                <Fieldset title="personal.info">
+                <Fieldset title="employee.personal_info">
                     <Row>
-                        <Field name='firstName' label={'person.firstName'} type='text'/>
-                        <Field name='lastName' label={'person.lastName'} type='text'/>
-                        <Field name='fatherName' label={'person.fatherName'} type='text'/>
-                        <Field name='nationalCode' label={'person.nationalCode'} type='number'/>
-                        <Field name='birthDate' label={'person.birthDate'} type='date'/>
-                        <Field name='gender' label={'person.gender'}>
+                        <Field name='firstName' label='person.firstName' type='text'/>
+                        <Field name='lastName' label='person.lastName' type='text'/>
+                        <Field name='fatherName' label='person.fatherName' type='text'/>
+                        <Field name='nationalCode' label='person.nationalCode' type='number'/>
+                        <Field name='birthDate' label='person.birthDate' type='date'/>
+                        <Field name='gender' label='person.gender'>
                             <Select data={GENDER_DATA} keyField={'id'} textField={'title'}/>
                         </Field>
-                    </Row>
-                    <Row>
                         <Field name='marriedState' label={'person.marriedState'}>
                             <Checkbox/>
                         </Field>
                     </Row>
                 </Fieldset>
-                <Fieldset title="address.info">
+                <Fieldset title="employee.contact_info">
+                    <Row>
+                        <Field name='contact.mobile' label='contact.mobile' type='text'/>
+                        <Field name='contact.tel' label='contact.tel' type='text'/>
+                        <Field name='contact.email' label='contact.email' type='text'/>
+                    </Row>
+                </Fieldset>
+                <Fieldset title="employee.address_info">
                     <Row>
                         <Field name='address.province' label='address.province'>
                             <Select data={ZoneDataList} textField='title' onChange={this.onChangeProvince}/>
@@ -76,15 +87,17 @@ class AddPerson extends React.Component {
                             <Select data={this.state.cities} textField='title'/>
                         </Field>
                         <Field name='address.postalCode' label='address.postalCode' type='number'/>
-                    </Row>
-                    <Row>
                         <Field name='address.fullAddress' label='address.fullAddress'>
                             <TextArea/>
                         </Field>
                     </Row>
 
                 </Fieldset>
-
+<Row>
+    <Field name='address.city' label='address.city'>
+        <Select data={this.state.cities} textField='title' />
+    </Field>
+</Row>
                 <Button title={'save'}/>
             </Form>
         </Card>
