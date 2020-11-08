@@ -6,8 +6,8 @@ let PersonList = React.lazy(() => import("../pages/PersonList"));
 let AddPerson = React.lazy(() => import("../pages/AddPerson"));
 
 const MAIN_ROUTES = [
-    {path: '/person', component: PersonList},
-    {path: '/person/new', component: AddPerson}
+    {path: '/person', component: PersonList,authorities:['ADMIN_USER']},
+    {path: '/person/new', component: AddPerson,authorities:['ADMIN_USER']}
 ];
 
 const Layout = (props) => <DefaultLayout {...props} mainRoutes={MAIN_ROUTES}/>;

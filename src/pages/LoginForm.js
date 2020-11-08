@@ -38,7 +38,7 @@ const LoginForm = ({onLoginSuccess}) => {
                 <Input type='password'/>
             </Field>
         </Row>
-        <Row className="mb-4">
+        <Row className="mt-2 mb-4">
             <Col className="col-6 offset-1">
                 <Link to='/forgotPassword' title='loginPage.forgotPassword'/>
             </Col>

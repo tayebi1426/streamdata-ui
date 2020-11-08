@@ -7,6 +7,7 @@ import FormContext from "./FormContext";
 import ErrorMessage from "./FieldError";
 import {Input} from "./index";
 import DatePicker from "./DatePicker";
+import ObjectUtils from "../util/ObjectUtils";
 
 const DATE_PICKER_TYPE = 'date';
 
@@ -31,18 +32,18 @@ class Field extends React.Component {
             name,
             type,
             placeholder,
-            value: formContext.values[name]
+            value: ObjectUtils.getValue(formContext.values, name)
         };
-        let fieldContent = null;
+        let fieldContent;
         if (children) {
             const child = React.Children.only(children);
             const {onChange, ...childRestProps} = child.props;
             fieldContent = React.cloneElement(child,
                 {
-                onChange: e => this.handelChange(e, onChange),
-                ...commonAttributes,
-                ...childRestProps
-            }, child.props.children);
+                    onChange: e => this.handelChange(e, onChange),
+                    ...commonAttributes,
+                    ...childRestProps
+                }, child.props.children);
         } else if (type) {
             let childTag = DATE_PICKER_TYPE === type.toString() ? DatePicker : Input;
             fieldContent = React.createElement(childTag, {onChange: formContext.handleChange, ...commonAttributes, ...restProps});

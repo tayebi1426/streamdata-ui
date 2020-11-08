@@ -116,7 +116,7 @@ body {
 div.card {
  box-shadow:  10px 12px 15px 2px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
   .card-body {
-    padding: $padding-5-7;
+    padding: 0.5rem 2rem;
   }
 
   div.card-title {
@@ -125,7 +125,7 @@ div.card {
 
     .card-title-caption {
       margin: auto;
-      padding: $padding-5-7;
+      padding: 0.5rem 1rem;
     }
 
     .card-title-collapse-btn {
@@ -204,11 +204,12 @@ li.nav-item {
 }
 
 fieldset > legend {
-  color: #66556655;
-  border-bottom: #66556655 1px solid;
-  padding: 0 0.5rem;
-  width: 99%;
-  margin-bottom: 0.75rem;
+  color: #15151570;
+  border-bottom: #66556650 1px solid;
+  //padding: 0 0.5rem;
+  width: 100%;
+  margin: 0.75rem 0;
+  font-size: medium;
 }
 
 

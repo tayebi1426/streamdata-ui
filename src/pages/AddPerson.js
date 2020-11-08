@@ -2,35 +2,60 @@ import React from "react";
 import {Button, Card, Checkbox, Field, Fieldset, Form, Row, Select, TextArea} from "../components";
 import PersonService from '../service/PersonService'
 import ZoneService from '../service/ZoneService'
-import ZoneDataList from './zone.json'
+import ZoneDataList from './data/zone.json'
+import GenderDataList from './data/gender.json'
 
 const ADD_ACCOUNT_RULES = {
     firstName: 'required',
     lastName: 'required',
     nationalCode: 'required|number',
-    birthDate: 'required'
+    birthDate: 'required|date'
 };
-const GENDER_DATA = [{id: 1, code: 'm', title: 'Male'}, {id: 2, code: 'f', title: 'Female'}];
 
 class AddPerson extends React.Component {
     initPersonData = {
         firstName: 'hadi',
-        lastName: '',
-        fatherName: '',
+        lastName: 'tayebi',
+        fatherName: 'mohammad',
         nationalCode: '1861274629',
         birthDate: new Date(),
         gender: null,
         marriedState: true,
         contact: {
-            mobileNumber: '',
-            tel: '',
-            email: ''
+            mobile: '09307777245',
+            tel: '09307777245',
+            email: 'h.tayebi@demisc.com'
         },
         address: {
-            province: null,
-            city: null,
-            postalCode: NaN,
-            fullAddress: ''
+            province: {
+                "id": 1,
+                "code": "TEHRAN",
+                "title": "تهران",
+                "cities": [
+                    {
+                        "id": 1,
+                        "code": "TEHRAN",
+                        "title": "تهران"
+                    },
+                    {
+                        "id": 1,
+                        "code": "DAMAVAND",
+                        "title": "دماوند"
+                    },
+                    {
+                        "id": 1,
+                        "code": "RODEHEN",
+                        "title": "رودهن"
+                    }
+                ]
+            },
+            city:  {
+                "id": 1,
+                "code": "TEHRAN",
+                "title": "تهران"
+            },
+            postalCode: 1234567890,
+            fullAddress: 'parvin'
         },
         skills: []
     };
@@ -47,12 +72,12 @@ class AddPerson extends React.Component {
         this.setState({cities: e.value.cities});
     };
     onSave = (formData) => {
-        //console.log(formData);
-        //PersonService.save(formData);
+        console.log(formData);
+        PersonService.save(formData);
     };
 
     render() {
-        return <Card title="employee.info">
+        return <Card title="employee.employee_info" collapse={true}>
             <Form initialValues={this.initPersonData}
                   validationRules={ADD_ACCOUNT_RULES}
                   onSubmit={this.onSave}>
@@ -64,7 +89,7 @@ class AddPerson extends React.Component {
                         <Field name='nationalCode' label='person.nationalCode' type='number'/>
                         <Field name='birthDate' label='person.birthDate' type='date'/>
                         <Field name='gender' label='person.gender'>
-                            <Select data={GENDER_DATA} keyField={'id'} textField={'title'}/>
+                            <Select data={GenderDataList} keyField={'id'} textField={'title'}/>
                         </Field>
                         <Field name='marriedState' label={'person.marriedState'}>
                             <Checkbox/>
@@ -93,12 +118,8 @@ class AddPerson extends React.Component {
                     </Row>
 
                 </Fieldset>
-<Row>
-    <Field name='address.city' label='address.city'>
-        <Select data={this.state.cities} textField='title' />
-    </Field>
-</Row>
-                <Button title={'save'}/>
+
+                <Button title='save'/>
             </Form>
         </Card>
     }
