@@ -15,7 +15,7 @@ const Layout = (props) => <DefaultLayout {...props} mainRoutes={MAIN_ROUTES}/>;
 const APP_ROUTES = [
     {path: '/login', component: LoginPage},
     {path: '/404', component: null},
-    {path: '/', exact: false, component: Layout}
+    {path: '/', exact: false, component: Layout,authorities:['ADMIN_USER']}
 ];
 
 export default APP_ROUTES;

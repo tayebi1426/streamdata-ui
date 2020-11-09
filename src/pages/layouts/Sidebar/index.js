@@ -28,13 +28,13 @@ const SidebarMenu = () => {
         <Nav vertical className="list-unstyled">
             <NavItem className="active">
                 <NavLink
-                    to="/app/dashboards/default"
+                    to="/person"
                     onClick={e => {
                         console.debug('e : ', e);
                     }
                     }>
                     <i className="iconsminds-shop-4"/>
-                    <I18Massage code="dashboards"/>
+                    <I18Massage code="employee.employee_info"/>
                 </NavLink>
             </NavItem>
         </Nav>
