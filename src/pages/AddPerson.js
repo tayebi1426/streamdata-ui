@@ -71,6 +71,10 @@ class AddPerson extends React.Component {
     onChangeProvince = (e) => {
         this.setState({cities: e.value.cities});
     };
+    onCancel = (e) => {
+        console.log(e);
+        //PersonService.save(formData);
+    };
     onSave = (formData) => {
         console.log(formData);
         PersonService.save(formData);
@@ -119,7 +123,8 @@ class AddPerson extends React.Component {
 
                 </Fieldset>
 
-                <Button title='save'/>
+                <Button title='cancel' isPrimary={false} color={'secondary'} onClick={this.onCancel} />
+                <Button title='save' isPrimary={true}/>
             </Form>
         </Card>
     }
