@@ -4,6 +4,7 @@ import PersonService from '../service/PersonService'
 import ZoneService from '../service/ZoneService'
 import ZoneDataList from './data/zone.json'
 import GenderDataList from './data/gender.json'
+import messageService from "../service/messageService";
 
 const ADD_ACCOUNT_RULES = {
     firstName: 'required',
@@ -66,18 +67,23 @@ class AddPerson extends React.Component {
 
     componentDidMount() {
         //ZoneService.getProvince().then(provinceList => this.setState({provinceList}));
+    messageService.onMessage().subscribe(message=>{
+       console.log('msg : ',message);
+    });
     }
 
     onChangeProvince = (e) => {
         this.setState({cities: e.value.cities});
     };
     onCancel = (e) => {
-        console.log(e);
-        //PersonService.save(formData);
+//        console.log(e);
+        messageService.sendMessage("test ddd");
     };
     onSave = (formData) => {
         console.log(formData);
-        PersonService.save(formData);
+        PersonService.save(formData).then(r=>{
+            console.debug("result : ",r);
+        });
     };
 
     render() {

@@ -4,8 +4,7 @@ import * as PropTypes from 'prop-types';
 
 
 function GridColumn({title,...restProps}) {
-    console.log('title : ',title);
-    return <div>defs</div> //<KGridColumn title={title + ' ---- '}  {...restProps}/>
+    return <KGridColumn title={title + ' ---- '}  {...restProps}/>
 }
 
 GridColumn.defaultProps = {

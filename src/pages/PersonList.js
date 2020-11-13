@@ -35,7 +35,7 @@ class PersonList extends React.Component {
                 <GridColumn field="firstName" title="person.firstName"/>
                 <GridColumn field="lastName" title="person.lastName"/>
                 <GridColumn field="nationalCode" title="person.nationalCode"/>
-                <GridColumn field="birthDate" title="person.birthDate" />
+                <GridColumn field="birthDate" title="person.birthDate" format="date" />
 
                 <GridCommands>
                     <EditCommand onClick={this.onEdit}/>

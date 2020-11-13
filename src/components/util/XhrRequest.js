@@ -60,6 +60,7 @@ class XhrRequest {
         }
         if (!onRejected) {
             onRejected = (error) => {
+                console.debug('error : ',error);
                 return Promise.reject(error);
             }
         }
